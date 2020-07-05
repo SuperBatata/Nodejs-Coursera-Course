@@ -98,7 +98,7 @@ dishRouter.route('/:dishId/comments')
             .catch((err) => next(err));
     })
     .post((req, res, next) => {
-        Dishes.findById(req.params.dishId)
+        Dishes.findByI(req.params.dishId)
             .then((dish) => {
                 if (dish != null) {
                     dish.comments.push(req.body);
